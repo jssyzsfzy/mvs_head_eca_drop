@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=1 python train_mvs_nerf_finetuning_pl.py --dataset_name llff --datadir /dataset/mvsnerf/nerf_llff_data/fern --expname fern-ft  --with_rgb_loss  --batch_size 1024 --num_epochs 1 --imgScale_test 1.0  --pad 24 --ckpt ./llff.tar --N_vis 1
