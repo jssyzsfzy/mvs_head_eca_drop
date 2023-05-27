@@ -1,15 +1,16 @@
-# MVSNeRF
-## [Project page](https://apchenstu.github.io/mvsnerf/) |  [Paper](https://arxiv.org/abs/2103.15595)
-This repository contains a pytorch lightning implementation for the ICCV 2021 paper: [MVSNeRF: Fast Generalizable Radiance Field Reconstruction from Multi-View Stereo](https://arxiv.org/abs/2103.15595). Our work present a novel neural rendering approach that can efficiently reconstruct
-geometric and neural radiance fields for view synthesis, Moreover, if dense images are captured, our estimated radiance field representation can be easily fine-tuned; this leads to fast per-scene reconstruction.<br><br>
+# MVS_head_eca_drop
 
-![Pipeline](configs/pipeline.png)
+![Pipeline](configs/fig1.png)
+
+![Pipeline](configs/fig2.png)
+
+本文参考项目为mvsnerf 可以根据mvsnerf安装与训练策略进行
 
 ## Installation
 
 #### Tested on Ubuntu 20.04 + Pytorch 1.10.1 + Pytorch Lignting 1.3.5
 
-Install environment:
+安装环境:
 ```
 conda create -n mvsnerf python=3.8
 conda activate mvsnerf
@@ -18,13 +19,9 @@ pip install pytorch-lightning==1.3.5 imageio pillow scikit-image opencv-python c
 ```
 
 
-## Training
-Please see each subsection for training on different datasets. Available training datasets:
-
-* [DTU](#dtu)
-* [Blender](#blender) (Realistic Synthetic)
-* [LLFF](#llff) (Real Forward-Facing)
-* [Your own data](#your-own-data) (images/intrinsic/extrinsic/nearfar boundles)
+## 训练
+训练数据集为DTU数据集，下载可以参考mvsnerf  
+其他测试数据集分别为llff，nerf，realestate10k，spaces
 
 ### DTU dataset
 
@@ -73,7 +70,7 @@ please check your configuration if your rendering result looks absnormal.
 Rendering from the trained model should have result like this:
 
 ![no-finetuned](https://user-images.githubusercontent.com/16453770/124207949-210b8300-db19-11eb-9ab9-610eff35395e.gif)
-
+<!-- 
 ## Finetuning
 ### Blender
 <details>
@@ -146,7 +143,7 @@ If you find our code or paper helps, please consider citing:
   journal={arXiv preprint arXiv:2103.15595},
   year={2021}
 }
-```
+``` -->
 
 Big thanks to [**CasMVSNet_pl**](https://github.com/kwea123/CasMVSNet_pl), our code is partially
 borrowing from them.
