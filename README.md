@@ -2,7 +2,7 @@
 
 ![Pipeline](configs/fig1.png)
 
-![Pipeline](configs/fig2.png)
+![2](configs/fig2.png)
 
 本文参考项目为mvsnerf 可以根据mvsnerf安装与训练策略进行
 
@@ -144,6 +144,20 @@ If you find our code or paper helps, please consider citing:
   year={2021}
 }
 ``` -->
+## 小场景数据集测试评估数据与可视化效果
+![3](configs/biao6.png)
+![4](configs/fig3.png)
+
+## 大场景数据集测试评估数据与可视化效果
+![3](configs/biao7.png)
+![4](configs/fig4.png)
+
+## 深度估计评估指标
+![3](configs/biao8.png)
+
+## 消融实验评估
+![3](configs/biao9.png)
+![4](configs/fig5.png)
 
 Big thanks to [**CasMVSNet_pl**](https://github.com/kwea123/CasMVSNet_pl), our code is partially
 borrowing from them.
