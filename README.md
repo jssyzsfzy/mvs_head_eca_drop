@@ -1,4 +1,5 @@
 # MVS_head_eca_drop
+为本人本科毕业设计题目与最终设计方案，包含各种代码与实验数据与可视化效果展示。
 
 ![Pipeline](configs/fig1.png)
 
