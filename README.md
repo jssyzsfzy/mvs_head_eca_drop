@@ -177,26 +177,3 @@ Qianqian Wang, Zhicheng Wang, Kyle Genova, Pratul Srinivasan, Howard Zhou, Jonat
 
 [**PixelNeRF: Neural Radiance Fields from One or Few Images (CVPR 2021)**](https://alexyu.net/pixelnerf/)<br>
 Alex Yu, Vickie Ye, Matthew Tancik, Angjoo Kanazawa
-
-
-CUDA_VISIBLE_DEVICES=2 nohup python render_dtu.py >out_1122_2.log 2>&1 &  
-CUDA_VISIBLE_DEVICES=1 nohup python render_llff.py >out_llff_128.log 2>&1 &  
-CUDA_VISIBLE_DEVICES=0 nohup python render_spaces.py >out_space_1122.log 2>&1 &  
-CUDA_VISIBLE_DEVICES=0 nohup python render_nerf.py >out_nerf_128.log 2>&1 &  
-CUDA_VISIBLE_DEVICES=1 nohup python render_real.py >out_real_128.log 2>&1 &  
-CUDA_VISIBLE_DEVICES=0 nohup python render_real.py >out_real.log 2>&1 &  
-CUDA_VISIBLE_DEVICES=3 python get_video.py
-
-nohup sh test_1122.sh >out_1122.log 2>&1 &  
-
-
-CUDA_VISIBLE_DEVICES=2 nohup python train_mvs_nerf_pl.py --imgScale_test 1.0 --expname mvs-nerf-dtu_128 --num_epochs 6 --N_samples 128 --use_viewdirs --batch_size 3096 --chunk 3096 --netchunk 3096 --dataset_name dtu --datadir /dataset/mvsnerf/mvs_training/dtu --N_vis 6 --ckpt ./runs_new/mvs-nerf-dtu_128/ckpts//latest.tar >mvsnerf_128.log 2>&1 &
-
-
-
-CUDA_VISIBLE_DEVICES=0 python train_mvs_nerf_finetuning_pl.py --dataset_name dtu_ft --datadir /dataset/mvsnerf/mvs_training/dtu/scan1 --expname scan1-ft  --with_rgb_loss --batch_size 1024 --num_epochs 1 --imgScale_test 1.0  --pad 24 --ckpt ./dtu.tar --N_vis 1
-
-fern  flower  fortress  horns  leaves  orchids  room  trex
-CUDA_VISIBLE_DEVICES=1 python train_mvs_nerf_finetuning_pl.py --dataset_name llff --datadir /dataset/mvsnerf/nerf_llff_data/flower --expname flower-ft  --with_rgb_loss  --batch_size 1024 --num_epochs 1 --imgScale_test 1.0  --pad 24 --ckpt ./llff.tar --N_vis 1
-
-CUDA_VISIBLE_DEVICES=0 python get_video.py
